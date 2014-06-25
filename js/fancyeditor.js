@@ -1,5 +1,6 @@
 var zoom = 1;
 var activeFancyBox = null;
+var templates = {};
 
 $(document).ready(function() {
 	positionFrames();
@@ -20,7 +21,7 @@ $(document).ready(function() {
 	});
 
 	$(".js-toggle-border").click(function() {
-		$(".fancy-box").css("border", "1px dashed red");
+		$(".fancy-box").css("border", "1px dashed #FFA1A1");
 	});
 
 	$(".js-add").click(function() {
@@ -56,9 +57,24 @@ $(document).ready(function() {
 		e.preventDefault();
 
 		var width = $(this).find("select[name=width]").val();
-		$("#page").append("<div class='medium-" + width + " columns fancy-box'></div>");
-		$(".fancy-box").click(function() {
-			changeActiveBox($(this));
+		var type  = $(this).find("select[name=type]").val();
+		
+
+		// load template
+		$.get("box-types/" + type + ".html", function(data) {
+			templates[type] = data;
+			data = data.replace("{{type}}", type);
+			data = data.replace("{{width}}", width);
+			data = data.replace("{{content}}", "");
+
+			console.log(data);
+
+			$("#page").append(data);
+
+			// add event to new fancy box
+			$(".fancy-box").click(function() {
+				changeActiveBox($(this));
+			});
 		});
 	});
 });
