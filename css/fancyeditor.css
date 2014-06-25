@@ -1,0 +1,90 @@
+html
+{
+	max-height:100%;
+	position:relative;
+}
+body
+{
+	height:100%;
+}
+#preview-area
+{
+	width:100%;
+	overflow:scroll;
+	background-color:#cecece;
+}
+#preview-area-container
+{
+	width:60%;
+	float:left;
+	overflow:auto;
+}
+#preview-area-menu
+{
+	position:absolute;
+	top:5px;
+	left:5px; 
+	z-index:999999;
+}
+#options-area
+{
+	width:40%;
+	float:left;
+}
+
+#page
+{
+	height:1000px;
+	width:700px;
+	margin:20px auto;
+	padding:20px;
+	background-color:white;
+}
+
+.fancy-box
+{
+	min-height:70px;
+	outline:none;
+	position:relative;
+	z-index:100;
+}
+.fancy-box:hover
+{
+	outline:5px solid rgba(33,33,33,0.5);
+}
+.fancy-box.active
+{
+	outline:5px solid #333;
+	z-index:101;
+}
+
+.fancy-box .options
+{
+	position:absolute;
+	top:-5px;
+	right:-5px;
+	bottom:-4px;
+	background-color:#333;
+	color:#cecece;
+	width:40px;
+}
+.fancy-box button
+{
+	color:#fff;
+	background-color:#333;
+}
+.fancy-box button:hover;
+{
+	background-color:#555;
+}
+
+/* modal */
+
+.reveal-modal-bg
+{
+	z-index:999;
+}
+.reveal-modal
+{
+	z-index:1000;
+}
