@@ -19,39 +19,57 @@
 				<button class="button tiny js-add">add</button>
 			</div>
 			<div id="page" class="row">
-				
+				<div id="ruler">
+					<div class="medium-1 columns">1</div>
+					<div class="medium-1 columns">2</div>
+					<div class="medium-1 columns">3</div>
+					<div class="medium-1 columns">4</div>
+					<div class="medium-1 columns">5</div>
+					<div class="medium-1 columns">6</div>
+					<div class="medium-1 columns">7</div>
+					<div class="medium-1 columns">8</div>
+					<div class="medium-1 columns">9</div>
+					<div class="medium-1 columns">10</div>
+					<div class="medium-1 columns">11</div>
+					<div class="medium-1 columns">12</div>
+				</div>
+				<br><br>
+				<div class="inner-page">
+					
+				</div>
 			</div>
 		</div>
 	</div>
 	
 	<div id="options-area">
 		<div class="option-editor">
-			<textarea name="content"></textarea>
-			<input type="submit">
+			<div class="js-tab">
+				<ul class="tabs">
+					<li class="tab button" data-target="#tab1">Boxes</li>
+					<li class="tab button secondary" data-target="#tab2">Templates</li>
+					<li class="tab button secondary" data-target="#tab3">Editor</li>
+					<li class="tab button secondary" data-target="#tab4">Other</li>
+				</ul>
+				<div id="tab1" class="tab-content">
+					<p>tab 1</p>
+				</div>
+				<div id="tab2" class="tab-content">
+					<p>tab 2</p>
+				</div>
+				<div id="tab3" class="tab-content">
+					<p>tab 3</p>
+				</div>
+				<div id="tab4" class="tab-content">
+					<p>tab 4</p>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div id="new-box-modal" class="reveal-modal" data-reveal>
 		<h2>Add box</h2>
-		<form id="new-box-form" close-target="#new-box-modal">
-			<label>Choose box width:</label>
-			<select name="width">
-				<option value="1">1 column</option>
-				<option value="2">2 columns</option>
-				<option value="4">4 columns</option>
-				<option value="6">6 columns</option>
-				<option value="8">8 columns</option>
-				<option value="10">10 columns</option>
-				<option value="12">12 columns</option>
-			</select>
-			<label>Type:</label>
-			<select name="type">
-				<option value="content">Content (text or HTML)</option>
-				<option value="image">Image</option>
-				<option value="social">Social</option>
-				<option></option>
-			</select>
-			<input class="button small" type="submit" value="Add">
-		</form>
+		<div class="js-modal-form">
+			
+		</div>
 		<a class="close-reveal-modal">&#215;</a>
 	</div>
 </body>
