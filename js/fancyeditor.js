@@ -46,25 +46,6 @@ $(document).ready(function() {
 		$(".fancy-box").removeClass("active");
 	});
 
-	// forms
-	$("form").submit(function() {
-		if($(this).attr("close-target").length) {
-			$($(this).attr("close-target")).foundation("reveal", "close");
-		}
-	});
-
-	
-
-	$("#new-box-form").submit(function(e) {
-		e.preventDefault();
-
-		var width = $(this).find("select[name=width]").val();
-		var type  = $(this).find("select[name=type]").val();
-		
-
-		
-	});
-
 	// tabs
 	$(".js-tab .tab").click(function() {
 		$(".js-tab .tab").addClass("secondary");
@@ -73,6 +54,11 @@ $(document).ready(function() {
 		$(".js-tab .tab-content").hide();
 		$($(this).attr("data-target")).show();
 	});
+
+	// box adding
+	$(".item-box button").click(function() {
+		createBoxFormModal($(this).parent().attr("type"));
+	});
 });
 
 function positionFrames() {
@@ -80,7 +66,7 @@ function positionFrames() {
 }
 function pageZoom(_zoom) {
 	zoom += _zoom;
-	$("#page").css('zoom', (zoom * 100) + "%");
+	$("#page").animate({'zoom': (zoom * 100) + "%"});
 }
 function changeActiveBox(box) {
 	// remove active from any fancy box 
@@ -103,6 +89,8 @@ function formListen()
 {
 	$("form.option-form").submit(function(e) {
 		e.preventDefault();
+
+		tinyMCE.triggerSave();
 
 		var options = {};
 		$(this).find(".option-control").each(function() {
@@ -130,6 +118,10 @@ function formListen()
 					changeActiveBox($(this));
 				});
 			});
+
+			if($(this).attr("close-target").length) {
+				$($(this).attr("close-target")).foundation("reveal", "close");
+			}
 
 		}
 

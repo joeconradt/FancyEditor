@@ -35,7 +35,7 @@ body
 #page
 {
 	height:1000px;
-	width:700px;
+	width:1000px;
 	margin:90px auto;
 	padding:20px;
 	background-color:white;
@@ -142,4 +142,11 @@ body
 .js-tab #tab1
 {
 	display:block;
+}
+
+.item-box
+{
+	background-color:#cecece;
+	border:10px solid white;
+	cursor:pointer;
 }
